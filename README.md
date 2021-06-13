@@ -11,7 +11,7 @@ Complete library for GY-85 compatible with all micropython board. Supports readi
 5. Roll and Pitch Calculation
 6. Gyro values in °/s
 7. Temperature values in °C
-8. 
+
 
 # Usage 
 ```

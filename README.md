@@ -6,7 +6,12 @@ Complete library for GY-85 compatible with all micropython board. Supports readi
 # Features
 1. Selectable modes from Acceleration reading only, Gyroscope and Temperature reading only, Magnetometer reading only, or configurable multiple reading modes. 
 2. Standard Micropython syntax, no special library used. 
-3. Feature to detect counterfeit GY-85. 
+3. Feature to detect counterfeit GY-85 (from my personal experience writing this library)
+4. Acceleration values in G
+5. Roll and Pitch Calculation
+6. Gyro values in °/s
+7. Temperature values in °C
+8. 
 
 # Usage 
 ```
@@ -43,6 +48,7 @@ Magnet Value x = 0.xxxx, y = 0.xxxx, z = -1.xxxx
 Acceleration Value x = 0.0234, y = 0.0468, z = -1.0764
 Roll Value = -2.489737, Pitch Value = -1.244281
 Temperature : 34.73214
+Gyroscope Value x = -0.6956522, y = -2.086957, z = 0.973913
 ```
         
 

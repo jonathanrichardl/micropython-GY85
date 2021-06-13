@@ -44,7 +44,6 @@ Acceleration Value x = 0.0234, y = 0.0468, z = -1.0764
 Roll Value = -2.489737, Pitch Value = -1.244281
 Temperature : 34.73214
 ```
-## Magnet only mode 
         
 
 

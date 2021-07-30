@@ -8,7 +8,7 @@ magnet = GY85(scl = sclPin, sda = sdaPin, i2cid = i2cid, acc = False, magnet = T
 try:
     while True:
         try:
-            buffer = magnet.readMagnet()
+            buffer = magnet.read_magnet()
             print("Magnet Value x = " + str(buffer[0])+", y = " + str(buffer[1])+", z = " + str(buffer[2]))
             utime.sleep(1)
         except:

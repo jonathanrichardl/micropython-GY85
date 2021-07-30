@@ -40,7 +40,7 @@ class GY85:
             except:
                 print("Fake GY-85 Detected, Invalid address for Magnetometer. Please buy a genuine one.")
     
-    def readAcc(self):
+    def read_acc(self):
         try:
             buff = self.gy85.readfrom_mem(GY85.adxl345,GY85.accDataRegister,6)
             x = (int(buff[1]) << 8) | buff[0]
@@ -56,8 +56,8 @@ class GY85:
         except:
             print("Acceleration Measurement is not enabled, make sure you enable first by adding acc = True")
     
-    def calculateRP(self):
-        x,y,z = self.readAcc()
+    def calculate_rp(self):
+        x,y,z = self.read_acc()
         try:
             roll = math.atan(y/z) * 57.3
             pitch = math.atan((- x) / math.sqrt(y * y + z * z)) * 57.3
@@ -66,7 +66,7 @@ class GY85:
             pitch = 0
         return roll,pitch
         
-    def readGyro(self):
+    def read_gyro(self):
         buff = self.gy85.readfrom_mem(GY85.itg3200, GY85.gyroDataRegister,8)
         temp = (int(buff[0]) << 8) | buff[1]
         if temp>32767:
@@ -83,7 +83,7 @@ class GY85:
             z-= 65535
         return temp, x/14.375, y/14.375, z/14.375
     
-    def readMagnet(self):
+    def read_magnet(self):
         try:
             buff = self.gy85.readfrom_mem(GY85.hmc5883l, GY85.magnetDataRegister,6)
             x = (int(buff[0]) << 8) | buff[1]
@@ -99,9 +99,9 @@ class GY85:
         except:
             print("Magnet Measurement is not enabled, make sure you enable first by adding magnet = True OR get a genuine GY85 Board")
     
-    def calculateHeading(self, x = None, y = None):
+    def calculate_heading(self, x = None, y = None):
         if x is None | y is None:
-            x,y = self.readMagnet()
+            x,y = self.read_magnet()
         heading = math.atan(y/x)
         return heading
     

@@ -26,7 +26,7 @@ try:
     while True:
         buffer = gy85.read_acc()
         print("Acceleration Value x = " + str(buffer[0])+", y = " + str(buffer[1])+", z = " + str(buffer[2]))
-        buffer = gy85.calculateRP()
+        buffer = gy85.calculate_rp()
         print("Roll Value = " + str(buffer[0])+", Pitch Value = " + str(buffer[1]))
         buffer = gy85.read_gyro()
         print("Temperature : " + str(buffer[0]))
